@@ -23,38 +23,35 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center gap-4 flex-1 justify-center">
-          <Link 
-            to="/dashboard" 
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-              isActive('/dashboard') || isActive('/') 
-                ? 'bg-primary-500 text-white' 
+          <Link
+            to="/dashboard"
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${isActive('/dashboard') || isActive('/')
+                ? 'bg-primary-500 text-white'
                 : 'text-gray-600 hover:bg-primary-100 hover:text-primary-600 hover:-translate-y-0.5'
-            }`}
+              }`}
           >
             <Home size={18} />
             <span className="hidden sm:inline">Dashboard</span>
           </Link>
 
-          <Link 
-            to="/tasks/new" 
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-              isActive('/tasks/new') 
-                ? 'bg-primary-500 text-white' 
+          <Link
+            to="/tasks/new"
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${isActive('/tasks/new')
+                ? 'bg-primary-500 text-white'
                 : 'text-gray-600 hover:bg-primary-100 hover:text-primary-600 hover:-translate-y-0.5'
-            }`}
+              }`}
           >
             <Plus size={18} />
             <span className="hidden sm:inline">New Task</span>
           </Link>
 
           {user?.role === 'admin' && (
-            <Link 
-              to="/users" 
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                isActive('/users') 
-                  ? 'bg-primary-500 text-white' 
+            <Link
+              to="/users"
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${isActive('/users')
+                  ? 'bg-primary-500 text-white'
                   : 'text-gray-600 hover:bg-primary-100 hover:text-primary-600 hover:-translate-y-0.5'
-              }`}
+                }`}
             >
               <Users size={18} />
               <span className="hidden sm:inline">Users</span>
@@ -66,8 +63,8 @@ const Navbar = () => {
           <span className="text-gray-600 text-sm hidden md:block">
             Welcome, <strong className="text-gray-900">{user?.username}</strong>
           </span>
-          <button 
-            onClick={handleLogout} 
+          <button
+            onClick={handleLogout}
             className="btn-outline px-4 py-2 text-sm hover:bg-red-500 hover:border-red-500 hover:text-white"
           >
             <LogOut size={18} />
